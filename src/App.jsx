@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faSync, faCheck } from '@fortawesome/free-solid-svg-icons'; // Add faCheck for copied state
+import { faCopy, faSync, faCheck } from '@fortawesome/free-solid-svg-icons'; 
 import './App.css';
 
 function App() {
@@ -10,8 +10,6 @@ function App() {
   const [sym, setSym] = useState(true);
   const [coppy, setCoppy] = useState('Copy');
   const [copiedIcon, setCopiedIcon] = useState(faCopy);
-
- 
 
   function generatePassword() {
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -32,8 +30,8 @@ function App() {
     }
 
     setPassword(pass);
-    setCoppy('Copy'); 
-    setCopiedIcon(faCopy); 
+    setCoppy('Copy');
+    setCopiedIcon(faCopy);
   }
 
   useEffect(() => {
@@ -44,33 +42,32 @@ function App() {
   const copyPassword = () => {
     window.navigator.clipboard.writeText(password);
     setCoppy('Copied');
-    setCopiedIcon(faCheck); 
+    setCopiedIcon(faCheck);
   };
 
   const handleLengthChange = (e) => {
     const newValue = e.target.value;
     setLength(newValue);
-    e.target.style.setProperty('--val', `${(newValue - 6) / (20 - 6) * 100}%`); 
-    setCoppy('Copy'); 
+    e.target.style.setProperty('--val', `${(newValue - 6) / (20 - 6) * 100}%`);
+    setCoppy('Copy');
   };
 
   const handleNumChange = (e) => {
     setNum(e.target.checked);
     setCoppy('Copy');
-    setCopiedIcon(faCopy); 
+    setCopiedIcon(faCopy);
   };
 
   const handleSymChange = (e) => {
     setSym(e.target.checked);
     setCoppy('Copy');
-    setCopiedIcon(faCopy); 
+    setCopiedIcon(faCopy);
   };
 
   return (
     <div className="password-generator">
       <div className="password-display">
         <h2>{password}</h2>
-        
         <div className="icons">
           <FontAwesomeIcon
             icon={copiedIcon}
@@ -86,11 +83,10 @@ function App() {
           />
         </div>
       </div>
-
       <div className="customize-section">
         <h3>Customize your password</h3>
 
-        <div style={{marginTop:'30px'}} className="slider-container">
+        <div style={{ marginTop: '30px' }} className="slider-container">
           <label>Password Length: {length}</label>
           <input
             type="range"
@@ -100,28 +96,26 @@ function App() {
             onChange={handleLengthChange}
           />
         </div>
-
         <div className="checkboxes">
-  <div style={{marginTop:'20px'}}>
-    <input
-      type="checkbox"
-      checked={num}
-      onChange={handleNumChange}
-    />
-    <label>Numbers</label>
-  </div>
+          <div style={{ marginTop: '20px' }}>
+            <input
+              type="checkbox"
+              checked={num}
+              onChange={handleNumChange}
+            />
+            <label>Numbers</label>
+          </div>
 
-  <div style={{marginTop:'20px'}}>
-    <input
-      type="checkbox"
-      checked={sym}
-      onChange={handleSymChange}
-    />
-    <label>Symbols</label>
-  </div>
-</div>
-
-        <button style={{marginTop:'20px'}} className="copy-btn" onClick={copyPassword}>
+          <div style={{ marginTop: '20px' }}>
+            <input
+              type="checkbox"
+              checked={sym}
+              onChange={handleSymChange}
+            />
+            <label>Symbols</label>
+          </div>
+        </div>
+        <button style={{ marginTop: '20px' }} className="copy-btn" onClick={copyPassword}>
           Copy password
         </button>
       </div>
