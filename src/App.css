@@ -13,9 +13,11 @@
   align-items: center;
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
   margin-bottom: 20px;
   position: relative;
+  border-bottom: 4px solid #d32f2f;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .password-display h2 {
