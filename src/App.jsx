@@ -10,7 +10,6 @@ function App() {
   const [sym, setSym] = useState(true);
   const [coppy, setCoppy] = useState('Copy');
   const [copiedIcon, setCopiedIcon] = useState(faCopy);
-
   function generatePassword() {
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     let pass = '';
