@@ -21,5 +21,3 @@ This project has been a great opportunity to dive deep into React’s powerful c
 React for the frontend framework
 CSS for responsive and modern styling
 JavaScript for interactive functionality
-
-Hosted Link : https://lnkd.in/ea_8E9iN
